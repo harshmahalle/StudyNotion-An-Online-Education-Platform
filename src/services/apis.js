@@ -1,5 +1,4 @@
-const BASE_URL = process.env.REACT_APP_BASE_URL || "https://studynotion-an-online-education-platform-2odv.onrender.com";
-
+const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:4000/api/v1";
 
 // AUTH ENDPOINTS
 export const endpoints = {
