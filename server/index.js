@@ -16,17 +16,33 @@ const dotenv = require("dotenv");
 dotenv.config();
 const PORT = process.env.PORT || 4000;
 
+const allowedOrigins = [
+	"http://localhost:3000", // Local development
+	"https://study-notion-an-online-education-platform-red.vercel.app", // Production frontend
+  ];
+  
+
 //database connect
 database.connect();
 //middlewares
 app.use(express.json());
 app.use(cookieParser());
+
 app.use(
 	cors({
-		origin:"http://localhost:3000",
-		credentials:true,
+	  origin: function (origin, callback) {
+		// Allow requests with no origin (like mobile apps, Postman)
+		if (!origin) return callback(null, true);
+		if (allowedOrigins.includes(origin)) {
+		  callback(null, true); // Allow the request
+		} else {
+		  callback(new Error("Not allowed by CORS")); // Reject the request
+		}
+	  },
+	  credentials: true, // Allow cookies and headers like Authorization
 	})
-)
+  );
+  
 
 app.use(
 	fileUpload({
