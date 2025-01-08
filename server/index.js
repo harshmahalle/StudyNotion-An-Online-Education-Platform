@@ -18,7 +18,7 @@ const PORT = process.env.PORT || 4000;
 
 const allowedOrigins = [
 	"https://localhost:4000", // Local development
-	"https://study-notion-an-online-education-platform-red.vercel.app/", // Production frontend
+	"https://study-notion-an-online-education-platform-red.vercel.app", // Production frontend
   ];
   
 
