@@ -17,8 +17,8 @@ dotenv.config();
 const PORT = process.env.PORT || 4000;
 
 const allowedOrigins = [
-	"hhttp://localhost:4000", // Local development
-	"https://study-notion-an-online-education-platform-7lnoxqen2.vercel.app/", // Production frontend
+	"https://localhost:4000", // Local development
+	"https://study-notion-an-online-education-platform-red.vercel.app/", // Production frontend
   ];
   
 
